@@ -46,7 +46,6 @@ public class GemstoneRepository implements IGemstoneRepository {
 		}
 	}	
 
-	@Override
 	public List<Gemstone> getGemstones() {
 		
 		String sql = "SELECT pg.gemstoneId, pg.gemstoneName, pg.gemstoneLink "
@@ -55,7 +54,6 @@ public class GemstoneRepository implements IGemstoneRepository {
 		return list;
 	}
 
-	@Override
 	public List<Gemstone> availableGemstoneByParameter(String productCategory) {
 		MapSqlParameterSource paramSource = new MapSqlParameterSource();
 		paramSource.addValue("productCategory", productCategory);
