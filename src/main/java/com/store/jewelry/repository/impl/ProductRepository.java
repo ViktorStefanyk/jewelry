@@ -41,7 +41,6 @@ public class ProductRepository implements IProductRepository {
 		}
 	}
 
-	@Override
 	public List<Product> getAllProducts() {
 		String sql = "SELECT p.productId, "
 				+ "			 p.productName, "
