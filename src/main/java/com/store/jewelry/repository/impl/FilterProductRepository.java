@@ -45,7 +45,6 @@ public class FilterProductRepository implements IFilterProductRepository {
 	}
 	
 
-	@Override
 	public List<Product> getProductsByParameter(String productCategory, List<Integer> productGemstones, 
 												List<Integer> productType, List<Integer> productMaterial,
 												Integer productMinPrice, Integer productMaxPrice,
