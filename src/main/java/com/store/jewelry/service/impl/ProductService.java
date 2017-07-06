@@ -44,42 +44,34 @@ public class ProductService implements IProductService {
 	@Autowired public IPendantSizeRepository pendantRepository;
 	@Autowired public IGenderRepository genderRepository;
 
-	@Override
 	public List<Product> getAllProducts() {
 		return productRepository.getAllProducts();
 	}
 
-	@Override
 	public List<Gemstone> getGemstones() {
 		return gemstoneRepository.getGemstones();
 	}
 
-	@Override
 	public List<Category> getCategories() {
 		return categoryRepository.getCategories();
 	}
 
-	@Override
 	public List<Material> getMaterial() {
 		return materialRepository.getMaterial();
 	}
 
-	@Override
 	public List<Type> getTypes() {
 		return typeRepository.getTypes();
 	}
 
-	@Override
 	public List<RingSize> getAllRingSizes() {
 		return ringRepository.getAllRingSizes();
 	}
 
-	@Override
 	public List<ChainsSize> getAllChainsSizes() {
 		return chainsRepository.getAllChainsSizes();
 	}
 
-	@Override
 	public void addProduct(Product product) {
 		addProductRepository.addProduct(product);
 		for (RingSize ringSize : product.getProductRingSizes()) {
@@ -101,12 +93,10 @@ public class ProductService implements IProductService {
 		
 	}
 
-	@Override
 	public void addMainImage(Integer productId, String imageName, String imageRole) {
 		imageRepository.addMainImage(productId, imageName, imageRole);
 	}
 
-	@Override
 	public List<Product> getProductsByParameter(String productCategory, List<Integer> productGemstones, 
 			List<Integer> productType, List<Integer> productMaterial,
 			Integer productMinPrice, Integer productMaxPrice,
@@ -115,47 +105,38 @@ public class ProductService implements IProductService {
 		return filterProductRepository.getProductsByParameter(productCategory, productGemstones, productType, productMaterial, productMinPrice, productMaxPrice, sizeRing, sizeChains, sizePendant, productGender);
 	}
 
-	@Override
 	public List<RingSize> availableRingSizeByParameters(String productCategory) {
 		return ringRepository.availableRingSizeByParameters(productCategory);
 	}
 
-	@Override
 	public List<ChainsSize> availableChainsSizeByParameters(String productCategory) {
 		return chainsRepository.availableChainsSizeByParameters(productCategory);
 	}
 
-	@Override
 	public List<Gemstone> availableGemstoneByParameter(String productCategory) {
 		return gemstoneRepository.availableGemstoneByParameter(productCategory);
 	}
 
-	@Override
 	public List<Material> availableMaterialByParameter(String productCategory) {
 		return materialRepository.availableMaterialByParameter(productCategory);
 	}
 
-	@Override
 	public List<Type> availableTypeByParameter(String productCategory) {
 		return typeRepository.availableTypeByParameter(productCategory);
 	}
 
-	@Override
 	public List<PendantSize> getAllPendantSizes() {
 		return pendantRepository.getAllPendantSizes();
 	}
 
-	@Override
 	public List<PendantSize> availablePendantByParameter(String productCategory) {
 		return pendantRepository.availablePendantByParameter(productCategory);
 	}
 
-	@Override
 	public List<Gender> getGenders() {
 		return genderRepository.getGenders();
 	}
 
-	@Override
 	public List<Gender> availableGenderByParameter(String productCategory) {
 		return genderRepository.availableGenderByParameter(productCategory);
 	}
