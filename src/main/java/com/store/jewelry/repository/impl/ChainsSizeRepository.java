@@ -44,14 +44,12 @@ public class ChainsSizeRepository implements IChainsSizeRepository {
 		}
 	}
 
-	@Override
 	public List<ChainsSize> getAllChainsSizes() {
 		String sql = "SELECT chainsSizeId, chainsSize FROM chainssize GROUP BY chainsSize ASC";
 		List<ChainsSize> list = namedParameter.query(sql, new SizeMapper());
 		return list;
 	}
 
-	@Override
 	public void addChainsSizes(Integer productId, Integer chainsSizeId) {
 		MapSqlParameterSource paramSource = new MapSqlParameterSource();
 		paramSource.addValue("productId", productId);
@@ -61,7 +59,6 @@ public class ChainsSizeRepository implements IChainsSizeRepository {
 		
 	}
 
-	@Override
 	public List<ChainsSize> availableChainsSizeByParameters(String productCategory) {
 		MapSqlParameterSource paramSource = new MapSqlParameterSource(); 
 		paramSource.addValue("productCategory", productCategory);
