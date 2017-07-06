@@ -46,7 +46,6 @@ public class MaterialRepository implements IMaterialRepository {
 		}
 	}
 
-	@Override
 	public List<Material> getMaterial() {
 		
 		String sql = "SELECT pm.materialId, pm.materialName, pm.materialLink"
@@ -55,7 +54,6 @@ public class MaterialRepository implements IMaterialRepository {
 		return list;
 	}
 
-	@Override
 	public List<Material> availableMaterialByParameter(String productCategory) {
 		MapSqlParameterSource paramSource = new MapSqlParameterSource();
 		paramSource.addValue("productCategory", productCategory);
