@@ -64,7 +64,11 @@ public class AdminController {
 		productService.addProduct(productToBeAdded);
 		
 		MultipartFile mainImage = productToBeAdded.getProductMainImage();
-		String rootDirectory = "C:\\Users\\viktors\\workspace\\jewelry\\src\\main\\webapp\\resources\\images\\"; //at work: C:\Users\viktors\workspace\jewelry\src\main\webapp\resources\images
+		//String rootDirectory = "C:\\Users\\viktors\\workspace\\jewelry\\src\\main\\webapp\\resources\\images\\"; //at work: C:\Users\viktors\workspace\jewelry\src\main\webapp\resources\images
+		
+		String root = request.getSession().getServletContext().getRealPath("/");
+		String rootDirectory = root + "resources\\images\\";
+		
 		boolean success = (new File (rootDirectory + productToBeAdded.getProductId())).mkdirs();
 		if (success) {
 		      System.out.println("Folder name: " + productToBeAdded.getProductId() + " created");
