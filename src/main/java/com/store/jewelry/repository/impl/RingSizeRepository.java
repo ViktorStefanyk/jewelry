@@ -44,14 +44,12 @@ public class RingSizeRepository implements IRingSizeRepository {
 		}
 	}
 	 
-	@Override
 	public List<RingSize> getAllRingSizes() {
 		String sql = "SELECT ringSizeId, ringSize FROM ringsize GROUP BY ringSize ASC";
 		List<RingSize> list = namedParameter.query(sql, new SizeMapper());
 		return list;
 	}
 
-	@Override
 	public void addRingSizes(Integer productId, Integer ringSizeId) {
 		MapSqlParameterSource paramSource = new MapSqlParameterSource();
 		paramSource.addValue("productId", productId);
@@ -61,7 +59,6 @@ public class RingSizeRepository implements IRingSizeRepository {
 		namedParameter.update(sql, paramSource);
 	}
 
-	@Override
 	public List<RingSize> availableRingSizeByParameters(String productCategory) {
 		MapSqlParameterSource paramSource = new MapSqlParameterSource(); 
 		paramSource.addValue("productCategory", productCategory);
