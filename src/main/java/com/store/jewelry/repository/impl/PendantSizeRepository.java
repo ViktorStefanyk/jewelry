@@ -44,7 +44,6 @@ public class PendantSizeRepository implements IPendantSizeRepository {
 		}
 	}
 	
-	@Override
 	public void addPendantSizes(Integer productId, Integer pendantSizeId) {
 		MapSqlParameterSource paramSource = new MapSqlParameterSource();
 		paramSource.addValue("productId", productId);
@@ -53,7 +52,6 @@ public class PendantSizeRepository implements IPendantSizeRepository {
 		namedParameter.update(sql, paramSource);
 	}
 
-	@Override
 	public List<PendantSize> getAllPendantSizes() {
 		String sql = "SELECT pendantSizeId, pendantSize "
 				+ "		FROM pendantsize "
@@ -61,7 +59,6 @@ public class PendantSizeRepository implements IPendantSizeRepository {
 		return namedParameter.query(sql, new PendantMapper());
 	}
 
-	@Override
 	public List<PendantSize> availablePendantByParameter(String productCategory) {
 		MapSqlParameterSource paramSource = new MapSqlParameterSource();
 		paramSource.addValue("productCategory", productCategory);
