@@ -40,7 +40,6 @@ public class AddProductRepository implements IAddProductRepository {
 		return paramSource;
 	}
 
-	@Override
 	public void addProduct(Product product) {
 		String sql = "INSERT INTO product(productDescription, "
 				+ "						  productName,"
