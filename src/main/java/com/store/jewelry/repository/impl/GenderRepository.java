@@ -46,13 +46,11 @@ public class GenderRepository implements IGenderRepository {
 		}
 	}
 
-	@Override
 	public List<Gender> getGenders() {
 		String sql = "SELECT genderId, genderLink, genderName FROM productgender";
 		return namedParameter.query(sql, new GenderMapper());
 	}
 
-	@Override
 	public List<Gender> availableGenderByParameter(String productCategory) {
 		MapSqlParameterSource paramSource = new MapSqlParameterSource();
 		paramSource.addValue("productCategory", productCategory);
