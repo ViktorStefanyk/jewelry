@@ -46,7 +46,6 @@ public class TypeRepository implements ITypeRepository {
 		}
 	}
 
-	@Override
 	public List<Type> getTypes() {
 		String sql = "SELECT pt.typeId, pt.typeName, pt.typeLink "
 				+ "FROM producttype pt ";
@@ -54,7 +53,6 @@ public class TypeRepository implements ITypeRepository {
 		return list;
 	}
 
-	@Override
 	public List<Type> availableTypeByParameter(String productCategory) {
 		MapSqlParameterSource paramSource = new MapSqlParameterSource();
 		paramSource.addValue("productCategory", productCategory);
