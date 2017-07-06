@@ -19,7 +19,6 @@ public class ImageRepository implements IImageRepository {
 		this.namedParameter = new NamedParameterJdbcTemplate(dataSource);
 	}
 
-	@Override
 	public void addMainImage(Integer productId, String imageName, String imageRole) {
 		MapSqlParameterSource paramSource = new MapSqlParameterSource();
 		paramSource.addValue("productId", productId);
