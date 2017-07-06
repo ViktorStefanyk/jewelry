@@ -34,7 +34,6 @@ public class CategoryRepository implements ICategoryRepository {
 		}
 	}
 
-	@Override
 	public List<Category> getCategories() {
 		String sql = "SELECT categoryId, categoryName, categoryLink FROM productcategory";
 		List<Category> list = namedParameter.query(sql, new CategoryMapper());
